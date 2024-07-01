@@ -19,14 +19,14 @@ Detail Pesanan
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Detail Pesanan #<?= $order['id'] ?></h3>
+                    <h3>Detail Pesanan</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li>
                             <li class="breadcrumb-item"><a href="<?= base_url('orders') ?>">Pesanan</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Detail Pesanan</li>
+                            <li class="breadcrumb-item active" aria-current="page">Detail</li>
                         </ol>
                     </nav>
                 </div>
@@ -38,36 +38,41 @@ Detail Pesanan
                     <h4>Detail Pesanan</h4>
                 </div>
                 <div class="card-body">
-                    <p><strong>ID Pesanan:</strong> <?= $order['id'] ?></p>
-                    <p><strong>Total Harga:</strong> Rp <?= number_format($order['total_price'], 0, ',', '.') ?></p>
-                    <p><strong>Status:</strong> <?= $order['status'] ?></p>
-
-                    <h5>Item Pesanan</h5>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Produk</th>
-                                <th>Quantity</th>
-                                <th>Harga</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $number = 1; ?>
-                            <?php foreach ($orderItems as $item) : ?>
-                                <tr>
-                                    <td><?= $number++ ?></td>
-                                    <td><?= $products[$item['product_id']]['name'] ?></td>
-                                    <td><?= $item['quantity'] ?></td>
-                                    <td>Rp <?= number_format($item['price'], 0, ',', '.') ?></td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                    <div class="mb-3">
+                        <strong>Total Harga:</strong> Rp <?= number_format($order['total_price'], 0, ',', '.') ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Status:</strong> <?= $order['status'] ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Nama Produk:</strong> <?= $product['name'] ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Deskripsi Produk:</strong> <?= $product['description'] ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Harga Produk:</strong> Rp <?= number_format($product['price'], 0, ',', '.') ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Gambar Produk:</strong>
+                        <?php if ($product['image']) : ?>
+                            <img src="<?= base_url('uploads/' . $product['image']) ?>" alt="<?= $product['image'] ?>" class="img-fluid" style="max-width: 200px;">
+                        <?php else : ?>
+                            No Image
+                        <?php endif; ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Nama Pengguna:</strong> <?= $user['username'] ?>
+                    </div>
+                    <div class="mb-3">
+                        <strong>Email Pengguna:</strong> <?= $user['email'] ?>
+                    </div>
+                    <div>
+                        <a href="<?= base_url('orders') ?>" class="btn btn-secondary">Kembali ke Daftar Pesanan</a>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 </div>
-<!-- Place your content here -->
 <?= $this->endSection() ?>

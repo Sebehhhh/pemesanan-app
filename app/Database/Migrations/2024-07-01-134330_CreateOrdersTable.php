@@ -18,6 +18,10 @@ class CreateOrdersTable extends Migration
                 'type'       => 'INT',
                 'unsigned'   => true,
             ],
+            'product_id' => [
+                'type'       => 'INT',
+                'unsigned'   => true,
+            ],
             'total_price' => [
                 'type'       => 'DECIMAL',
                 'constraint' => '10,2',
@@ -47,6 +51,7 @@ class CreateOrdersTable extends Migration
         ]);
         $this->forge->addKey('id', true);
         $this->forge->addForeignKey('user_id', 'users', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('product_id', 'products', 'id', 'CASCADE', 'CASCADE');
         $this->forge->createTable('orders');
     }
 

@@ -79,12 +79,12 @@
                             </ul>
                         </li>
 
-                        <li class="sidebar-item">
+                        <!-- <li class="sidebar-item">
                             <a href="<?= base_url('users') ?>" class='sidebar-link'>
                                 <i class="bi bi-person-fill"></i>
                                 <span>Users</span>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="sidebar-item">
                             <a href="<?= base_url('cart') ?>" class='sidebar-link'>

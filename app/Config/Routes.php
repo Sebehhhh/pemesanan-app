@@ -36,6 +36,7 @@ $routes->get('orders/edit/(:num)', 'OrderController::edit/$1');
 $routes->post('orders/update/(:num)', 'OrderController::update/$1');
 $routes->get('orders/delete/(:num)', 'OrderController::delete/$1');
 
+
 $routes->post('cart/add', 'CartController::add');
 $routes->get('cart', 'CartController::index');
 $routes->get('cart/remove/(:num)', 'CartController::remove/$1');
