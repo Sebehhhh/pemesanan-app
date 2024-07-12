@@ -44,6 +44,10 @@ class CreateUsersTable extends Migration
                 'unsigned'   => true,
                 'null'       => true,
             ],
+            'is_admin' => [
+                'type'       => 'BOOLEAN',
+                'default'    => false,
+            ],
         ]);
         $this->forge->addKey('id', true);
         $this->forge->createTable('users');

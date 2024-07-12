@@ -12,24 +12,11 @@ class UserSeeder extends Seeder
             [
                 'username' => 'user3',
                 'email'    => 'user3@example.com',
+                'is_admin'    => 1,
                 'password' => password_hash('password', PASSWORD_DEFAULT),
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'username' => 'user1',
-                'email'    => 'user1@example.com',
-                'password' => password_hash('password', PASSWORD_DEFAULT),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
-            [
-                'username' => 'user2',
-                'email'    => 'user2@example.com',
-                'password' => password_hash('password', PASSWORD_DEFAULT),
-                'created_at' => date('Y-m-d H:i:s'),
-                'updated_at' => date('Y-m-d H:i:s'),
-            ],
+            ]
         ];
 
         // Using Query Builder
