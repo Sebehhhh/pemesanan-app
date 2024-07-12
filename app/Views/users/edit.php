@@ -61,6 +61,13 @@ Edit Pengguna
                                         <label for="password" class="form-label">Password (Leave blank if not changing)</label>
                                         <input type="password" class="form-control" id="password" name="password">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="is_admin" class="form-label">Is Admin</label>
+                                        <select class="form-control" id="is_admin" name="is_admin" required>
+                                            <option value="0" <?= $user['is_admin'] == 0 ? 'selected' : '' ?>>No</option>
+                                            <option value="1" <?= $user['is_admin'] == 1 ? 'selected' : '' ?>>Yes</option>
+                                        </select>
+                                    </div>
 
                                     <button type="submit" class="btn btn-primary">Update Pengguna</button>
                                 </form>

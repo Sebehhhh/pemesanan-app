@@ -59,6 +59,7 @@ Users
                                 <th>#</th>
                                 <th>Username</th>
                                 <th>Email</th>
+                                <th>Is Admin</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -69,6 +70,13 @@ Users
                                     <td><?= $number++ ?></td>
                                     <td><?= $user['username'] ?></td>
                                     <td><?= $user['email'] ?></td>
+                                    <td>
+                                        <?php if ($user['is_admin']) : ?>
+                                            <span class="badge bg-success">Yes</span>
+                                        <?php else : ?>
+                                            <span class="badge bg-secondary">No</span>
+                                        <?php endif; ?>
+                                    </td>
                                     <td>
                                         <a href="<?= base_url('users/edit/' . $user['id']) ?>" class="btn btn-sm btn-primary">Edit</a>
                                         <a href="<?= base_url('users/delete/' . $user['id']) ?>" class="btn btn-sm btn-danger">Delete</a>

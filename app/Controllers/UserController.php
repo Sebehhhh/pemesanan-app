@@ -58,6 +58,7 @@ class UserController extends BaseController
         $data = [
             'username' => $this->request->getPost('username'),
             'email' => $this->request->getPost('email'),
+            'is_admin' => $this->request->getPost('is_admin'),
             'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
         ];
 
@@ -101,6 +102,7 @@ class UserController extends BaseController
         $data = [
             'username' => $this->request->getPost('username'),
             'email' => $this->request->getPost('email'),
+            'is_admin' => $this->request->getPost('is_admin'),
         ];
 
         // Cek apakah ada password yang diubah

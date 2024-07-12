@@ -31,7 +31,8 @@ class AuthController extends Controller
                     'id' => $data['id'],
                     'username' => $data['username'],
                     'email' => $data['email'],
-                    'logged_in' => TRUE
+                    'logged_in' => TRUE,
+                    'is_admin' => $data['is_admin'],
                 ];
                 $session->set($ses_data);
                 return redirect()->to('/dashboard');

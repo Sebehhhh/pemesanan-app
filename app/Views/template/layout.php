@@ -78,13 +78,14 @@
 
                             </ul>
                         </li>
-
-                        <!-- <li class="sidebar-item">
-                            <a href="<?= base_url('users') ?>" class='sidebar-link'>
-                                <i class="bi bi-person-fill"></i>
-                                <span>Users</span>
-                            </a>
-                        </li> -->
+                        <?php if (session()->get('is_admin')) : ?>
+                            <li class="sidebar-item">
+                                <a href="<?= base_url('users') ?>" class='sidebar-link'>
+                                    <i class="bi bi-person-fill"></i>
+                                    <span>Users</span>
+                                </a>
+                            </li>
+                        <?php endif; ?>
 
                         <li class="sidebar-item">
                             <a href="<?= base_url('cart') ?>" class='sidebar-link'>

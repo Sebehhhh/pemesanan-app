@@ -61,6 +61,13 @@ Tambah Pengguna
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" class="form-control" id="password" name="password" required>
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="is_admin" class="form-label">Is Admin</label>
+                                        <select class="form-control" id="is_admin" name="is_admin" required>
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                        </select>
+                                    </div>
 
                                     <button type="submit" class="btn btn-primary">Tambah Pengguna</button>
                                 </form>
